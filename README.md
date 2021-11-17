@@ -2,10 +2,10 @@
 Display the sequence of computation states of elementary cellular automata. 
 
 From a single active cell
-![rule57F](https://github.com/caesiumCode/elementary-cellular-automaton/blob/main/Examples/ECA-57-F.png)
+![rule57F](https://github.com/caesiumCode/elementary-cellular-automaton/blob/main/examples/ECA-57-F.png)
 
 From a random set of active cells
-![rule57R](https://github.com/caesiumCode/elementary-cellular-automaton/blob/main/Examples/ECA-57-R.png)
+![rule57R](https://github.com/caesiumCode/elementary-cellular-automaton/blob/main/examples/ECA-57-R.png)
 
 | Input | Action |
 | ---------- | ---------- |
