@@ -10,9 +10,12 @@
 
 #include <SFML/Graphics.hpp>
 
-class ECA : public sf::Drawable {
+class ECA : public sf::Transformable, public sf::Drawable {
 public:
+    ECA();
     ECA(sf::Vector2u resolution);
+    
+    void setConfig(sf::Vector2u resolution);
     
     void setRule(int r);
     void setRandomInitialState(float prob);
@@ -20,7 +23,6 @@ public:
     void runComputation();
     
 private:
-    
     void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     
     unsigned int width, height;

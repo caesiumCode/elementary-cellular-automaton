@@ -9,10 +9,17 @@
 
 std::vector<bool> getExplicitRule(int n);
 
+ECA::ECA() {
+    
+}
+
 ECA::ECA(sf::Vector2u resolution) {
+    setConfig(resolution);
+}
+
+void ECA::setConfig(sf::Vector2u resolution) {
     computation.create(resolution.x, resolution.y);
     drawable_computation.setTexture(computation.getTexture());
-    drawable_computation.setScale(3, 3);
     width = resolution.x;
     height = resolution.y;
     
