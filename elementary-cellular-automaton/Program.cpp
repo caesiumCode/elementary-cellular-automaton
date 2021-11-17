@@ -18,6 +18,7 @@ Program::Program(const sf::Vector2u & w_size, const sf::Vector2u & c_size)
     rule = 0;
     p_active = 0.05f;
     moving = false;
+    randomized = false;
     
     // Set view
     view.reset(DEFAULT_RECT);
@@ -120,12 +121,31 @@ void Program::handleKeyboardEvent(const sf::Event & event) {
         case sf::Keyboard::R:
             eca.setRandomInitialState(p_active);
             eca.runComputation();
+            randomized = true;
             break;
             
         case sf::Keyboard::F:
             eca.setFixedInitialState(0.5f);
             eca.runComputation();
+            randomized = false;
             break;
+            
+        case sf::Keyboard::Return: {
+            std::string filename = "ECA-" + std::to_string(rule) + "-";
+            if (randomized) filename += "R";
+            else            filename += "F";
+            filename += ".png";
+            
+            std::string filepath = PATH + "/" + filename;
+            
+            sf::Texture texture;
+            texture.create(window.getSize().x, window.getSize().y);
+            texture.update(window);
+            if (texture.copyToImage().saveToFile(filepath))
+            {
+                std::cout << "screenshot saved to " << filepath << std::endl;
+            }
+        }
             
         default:
             break;

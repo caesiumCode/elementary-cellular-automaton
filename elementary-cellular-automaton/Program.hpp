@@ -8,8 +8,12 @@
 #ifndef Program_hpp
 #define Program_hpp
 
+#include <iostream>
+#include <filesystem>
 #include <cmath>
 #include "ECA.hpp"
+
+namespace fs = std::__fs::filesystem;
 
 class Program {
 public:
@@ -25,12 +29,13 @@ private:
     void handleKeyboardEvent(const sf::Event &);
     
     const std::string TITLE = "Elementary Cellular Automaton";
+    const std::string PATH = fs::current_path().string();
     const sf::Vector2u WINDOW_SIZE, COMPUTATION_SIZE;
     const sf::FloatRect DEFAULT_RECT;
     
     int rule;
     float p_active;
-    bool moving;
+    bool moving, randomized;
     sf::Vector2f previous_position;
     
     sf::View view;
