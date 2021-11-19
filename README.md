@@ -1,5 +1,5 @@
 # elementary-cellular-automaton
-Display the sequence of computation states of elementary cellular automata. 
+Display the sequence of computation states of elementary cellular automata, implemented in C++ with [SFML](https://www.sfml-dev.org/). 
 
 From a single active cell
 ![rule57F](https://github.com/caesiumCode/elementary-cellular-automaton/blob/main/examples/ECA-57-F.png)
